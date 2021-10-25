@@ -16,7 +16,10 @@ class Dessert:
         self.calories = calories
 
     def is_healthy(self):
-        return self.calories < 200
+        if str(self.calories).isnumeric():
+            return self.calories < 200
+        else:
+            return False
 
     def is_delicious(self):
         return True
@@ -32,7 +35,10 @@ class JellyBean(Dessert):
 
 
 def main():
-    pass
+    dessert = Dessert()
+    dessert.calories = 102
+    print(dessert.calories)
+    print(dessert.is_healthy())
 
 
 if __name__ == '__main__':
