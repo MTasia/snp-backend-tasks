@@ -1,4 +1,4 @@
-def multiply_numbers(string):
+def multiply_numbers(string=None):
     string = str(string)
 
     multiply = 1
@@ -15,7 +15,7 @@ def multiply_numbers(string):
 
 
 def main():
-    mass = "kkk"
+    mass = [1, 2, 3]
     ans = multiply_numbers(mass)
     print(ans)
 

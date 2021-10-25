@@ -1,25 +1,29 @@
 def sort_list(mass):
     if len(mass) == 0:
-        return 0
+        return []
     max_i = mass[0]
-    index_max_i = 0
     min_i = mass[0]
-    index_min_i = 0
     for i in range(len(mass)):
-        if max_i < mass[i]:
-            max_i = mass[i]
-            index_max_i = i
-        if mass[i] < min_i:
-            min_i = mass[i]
-            index_min_i = i
-    mass[index_min_i], mass[index_max_i] = max_i, min_i
-    mass.append(min_i)
+        max_i = max(max_i, mass[i])
+        min_i = min(min_i, mass[i])
+
+    new_mass = []
+    for i in range(len(mass)):
+
+        if mass[i] == min_i:
+            new_mass.append(max_i)
+        elif mass[i] == max_i:
+            new_mass.append(min_i)
+        else:
+            new_mass.append(mass[i])
+    new_mass.append(min_i)
+    return new_mass
 
 
 def main():
     mass = []
-    sort_list(mass)
-    print(mass)
+    new_mas = sort_list(mass)
+    print(new_mas)
 
 
 if __name__ == '__main__':

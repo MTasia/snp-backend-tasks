@@ -1,4 +1,5 @@
 def is_palindrome(string):
+    string = str(string)
     string_alpha = []
     for char in string:
         if char.isalpha() or char.isnumeric():
@@ -17,7 +18,7 @@ def is_palindrome(string):
 
 
 def main():
-    string = input()
+    string = "Madam, I'm Adam!"
     ans = is_palindrome(string)
     print(ans)
 
