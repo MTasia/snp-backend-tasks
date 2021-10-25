@@ -17,7 +17,7 @@ class Dessert:
 
     def is_healthy(self):
         if str(self.calories).isnumeric():
-            return self.calories < 200
+            return int(self.calories) < 200
         else:
             return False
 
