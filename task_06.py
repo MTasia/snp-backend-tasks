@@ -24,9 +24,9 @@ def rps_game_winner(players):
                 else:
                     return player2[0] + " " + player2[1]
     except WrongNumberOfPlayersError as wn:
-        return wn.msg
+        return wn
     except NoSuchStrategyError as nss:
-        return nss.msg
+        return nss
 
 
 def main():
