@@ -1,3 +1,6 @@
+import re
+
+
 class Dessert:
     def __init__(self, name=None, calories=None):
         self.name = name is not None
@@ -19,7 +22,11 @@ class Dessert:
         if str(self.calories).isnumeric():
             return int(self.calories) < 200
         else:
-            return False
+            find = re.findall(r"\d*\.\d+", str(self.calories))
+            if find:
+                return float(self.calories) < 200
+            else:
+                return False
 
     def is_delicious(self):
         return True
@@ -36,7 +43,7 @@ class JellyBean(Dessert):
 
 def main():
     dessert = Dessert()
-    dessert.calories = 102
+    dessert.calories = "199.999"
     print(dessert.calories)
     print(dessert.is_healthy())
 
